@@ -8,11 +8,11 @@ def table_each_team(team_name, y_axis):
     for element in range(len(y_axis)):
         x_axis.append(element+1)
     df = pd.DataFrame({'Round': x_axis, 'Cargo Points': y_axis})
-    df.to_excel(".././data/"+team_name+'.xlsx')
+    df.to_excel(f".././data/{team_name}.xlsx")
 
 def plot_each_team(team_name, dataframe):
-    fig = px.bar(dataframe, x="Round", y="Cargo Points", title="Team" + team_name)
-    plotly.offline.plot(fig, filename = ".././graphs/"+team_name+".html")
+    fig = px.bar(dataframe, x="Round", y="Cargo Points", title=f"Team{team_name}")
+    plotly.offline.plot(fig, filename = f".././graphs/{team_name}.html")
 
 df = pd.read_excel('Sacramento Scouting Data.xlsx')
 new_df = df[["Team Number", "Final Total Score Including Hanger", "Final Total Score Just Cargo"]]
@@ -37,5 +37,5 @@ for team in list_of_teams:
     counter += 1
 
 table_each_team(str(team_input), score)
-df = pd.read_excel(".././data/"+str(team_input)+".xlsx")
+df = pd.read_excel(f".././data/{team_input}.xlsx")
 plot_each_team(str(team_input), df)
