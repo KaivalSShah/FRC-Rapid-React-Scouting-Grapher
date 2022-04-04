@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 
-def graph_each_team(team_name, y_axis):
+def table_each_team(team_name, y_axis):
     x_axis = []
     for element in range(len(y_axis)):
         x_axis.append(element+1)
@@ -11,7 +11,7 @@ def graph_each_team(team_name, y_axis):
     df.to_excel(".././data/"+team_name+'.xlsx')
 
 def plot_each_team(team_name, dataframe):
-    fig = px.scatter(dataframe, x="Round", y="Cargo Points", title="Team" + team_name)
+    fig = px.bar(dataframe, x="Round", y="Cargo Points", title="Team" + team_name)
     plotly.offline.plot(fig, filename = ".././graphs/"+team_name+".html")
 
 df = pd.read_excel('Sacramento Scouting Data.xlsx')
@@ -36,6 +36,6 @@ for team in list_of_teams:
         score.append(score_just_cargo[counter])
     counter += 1
 
-graph_each_team(str(team_input), score)
+table_each_team(str(team_input), score)
 df = pd.read_excel(".././data/"+str(team_input)+".xlsx")
 plot_each_team(str(team_input), df)
