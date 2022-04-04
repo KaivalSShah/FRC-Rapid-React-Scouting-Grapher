@@ -7,4 +7,4 @@ Generating graphs to analyze spreadsheet data for the 2022 Rapid React game.
 3. Open the offline ```.html``` graph to see the data.
 
 ## Examples
-<img src="/assets/7419.png" width="800"/>
+<img src="/assets/254.png" width="800"/>
