@@ -20,7 +20,6 @@ list_of_teams = new_df["Team Number"].tolist()
 score_with_hanger = new_df["Final Total Score Including Hanger"].tolist()
 score_just_cargo = new_df["Final Total Score Just Cargo"].tolist()
 
-
 score = []
 no_repeat_teams = []
 for team in list_of_teams:
