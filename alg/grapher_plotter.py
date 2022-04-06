@@ -1,5 +1,4 @@
 import plotly
-import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 
@@ -22,9 +21,6 @@ score_just_cargo = new_df["Final Total Score Just Cargo"].tolist()
 
 score = []
 no_repeat_teams = set(list_of_teams)
-# for team in list_of_teams:
-#     if team not in no_repeat_teams:
-#         no_repeat_teams.append(team)
 
 print("team options: ")
 print(no_repeat_teams)
